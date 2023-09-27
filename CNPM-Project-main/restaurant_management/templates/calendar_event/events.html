@@ -1,0 +1,106 @@
+{% extends "management/layout.html" %}
+{% block title %}
+
+{% endblock %}
+{% block content %}
+<!-- You can alternatively load the minified version -->
+<div class="main-site-event">
+	
+	<div class="center">
+		<a class="btn btn-info" href="{% url 'cal_events' %}?{{ prev_month }}"> Previous Month </a>
+		<a id="create_event" class="btn btn-info btn-create" type="button" name="button" >Create event</a>
+		<a id="edit_event" class="btn btn-info" type="button" name="button" >View</a>
+		<a class="btn btn-info" href="{% url 'cal_events' %}?{{ next_month }}"> Next Month </a>
+	</div>
+	{{calendar_event}}
+</div>
+
+<div id = "create_event_form">
+	<form action="" class= "popup_content" method="post">
+		{% csrf_token %}
+		{{create_event_form.management_form}}
+    	{% for field in create_event_form %}
+            	<p class="label_sukien">{{ field.label_tag }}</p> {{ field }}
+    	{% endfor %}
+		<div class="form-button">
+			<button type="submit" >Create</button>
+			<button id="close_create_event">Close</button>
+		</div>
+	</form>
+	
+</div>
+<div id="edit_event_popup">
+	<div class="content_div">
+		<div id="edit_event_header">
+			<button id="close_edit_event" class="btn btn-primary left" type="button" name="button" >Close</button>
+		</div>
+		<div class="edit_event_content">
+			<table class="table" >
+				<thead>
+					<tr>
+						<th>Tên event</th>
+						<th>Mô tả</th>
+						<th>StartTime</th>
+						<th>EndTime</th>
+						<th>Món khuyến mãi</th>
+						<th>###</th>
+					</tr>
+				</thead>
+			</table>
+			<div style="height: 510px; overflow:auto;">
+				<table>
+					<tbody>
+						{% for event in events %}
+						<form action="" method="post">
+						{% csrf_token %}
+							<tr>
+								<td>{{event.ten_sk}}</td>
+								<td>{{event.mo_ta}}</td>
+								<td>{{event.ngay_bd}}</td>
+								<td>{{event.ngay_kt}}</td>
+								<td>{{event.ma_mon}}</td>
+								<td>
+										<li class="list-inline-item">
+										<button class="btn btn-danger btn-sm rounded-0" type="submit" data-toggle="tooltip" data-placement="top" title="Delete" value="{{event.ma_sk}}" name="delete_event"><i class="fa fa-trash">Delete</i></button>
+								</td>
+							</tr>
+						</form>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+		
+    </div>
+</div>
+
+
+<script>
+var popup1 = document.getElementById("create_event_form");
+var openPopup1 = document.getElementById("create_event");
+var closePopup1 = document.getElementById('close_create_event');
+
+var edit_event_pop = document.getElementById("edit_event_popup");
+var openPopup2 = document.getElementById("edit_event");
+var closePopup2 = document.getElementById("close_edit_event")
+
+openPopup1.addEventListener('click', function() {
+	popup1.style.display = "block";
+});
+closePopup1.addEventListener('click', function() {
+	popup1.style.display = "none";
+});
+
+openPopup2.addEventListener('click', function() {
+	edit_event_pop.style.display = "block";
+});
+
+closePopup2.addEventListener('click', function() {
+	edit_event_pop.style.display = "none";
+
+});
+
+
+</script>
+
+{% endblock %}

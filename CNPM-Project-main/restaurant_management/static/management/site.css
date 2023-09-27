@@ -1,0 +1,374 @@
+
+.message {
+    font-weight: 600;
+    color: blue;
+}
+ /* css header */
+.header{
+  background: url("https://png.pngtree.com/thumb_back/fh260/back_our/20190620/ourmid/pngtree-taobao-cooking-food-festival-hand-drawn-poster-background-image_162253.jpg");
+  color: #d6cbdd;
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+.container{
+  width: 100%;
+  height: 700px;
+  padding: auto;
+  background-color: #aab7cf;
+}
+.container_statistic{
+  width: 80%;
+  height: max-content;
+  margin-left: 10%;
+  margin-right: 10%;
+  background-color: #aab7cf;
+  justify-content: center;
+}
+
+#container_1{
+  width: 49%;
+  height: 650px;
+  float: left;
+  background-color: #aab7cf;
+}
+#container_2{
+  height: 690px;
+  width: 50%;
+  float: right;
+  /* font-size: small; */
+}
+
+.container{
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.btn_ban{
+  width: 110px;
+  height: 110px;
+  padding: auto;
+  color: green;
+}
+.btn_matrix{
+  font-size: 16px;
+  line-height: 24px;
+  width: 100%;
+}
+
+
+/* css nền bàn */
+.tab-content{
+  background-color: #c4cbd8;
+}
+
+/* css nền menu */
+.tab-pane fade{
+  background-color: #ced5e0;
+}
+/* css nền hóa đơn */
+
+.navbar {
+    background-color: rgb(184, 70, 70);
+    font-size: 1em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #ffffff;
+    padding: 20px 10px 20px 10px;
+    text-align: left;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar-brand {
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.navbar-item {
+    font-variant: small-caps;
+    margin-left: 30px;
+    
+}
+
+.body-content {
+    padding: 5px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: max-content;
+}
+
+/*My css*/
+/* table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  } */
+/*setting*/
+.sidebar {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  bottom: 0;
+  width: 230px;
+  z-index: 996;
+  transition: all 0.3s;
+  padding: 20px;
+  overflow-y: auto;
+  box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
+  background-color: rgba(206, 206, 206, 0.9);
+  margin-top: 116px;
+}
+
+.sidebar-nav {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.sidebar-nav li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.sidebar-nav .nav-heading {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #00153b;
+  font-weight: 600;
+  /* margin: 10px 0 5px 15px; */
+}
+.sidebar-nav .nav-link {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 600;
+  color: #030b53;
+  transition: 0.3;
+  background: rgba(255, 255, 255, 0);
+  padding: 10px 15px;
+  border-radius: 4px;
+}
+.addd_mon {
+float:right;
+margin-right: 25px;
+display:none;
+}
+
+#add_db_popup{
+  display: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  width: 100%;
+  height: 120%;
+  top : 0%;
+  left: 0%;
+  padding-left: 20%;
+  padding-top: 3%;
+}
+.content_add{
+  background-color: rgb(206, 206, 206);
+  width: 60%;
+  height: auto;
+}
+/* End setting*/
+
+  /* Event css*/
+  .main-site-event{
+    margin: 0;
+    /* background-color: whitesmoke; */
+  }
+  .calendar {
+    width: 80%;
+    margin: auto;
+    font-size: 13px;
+    font-weight: bold;
+    background-color: rgb(240, 234, 234);
+  }
+  
+  .calendar tr, .calendar td {
+    border-width:1px;  
+    border-radius: 15px;
+  }
+  
+  .calendar th {
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    background-color: rgb(189, 189, 189);
+  }
+  
+  .calendar td {
+    width: 75px;
+    height: 80px;
+    padding: 20px 0px 0px 5px;
+    background-color: rgb(240, 234, 234);
+  }
+  
+  .month {
+    font-size: 25px;
+  }
+  
+  .date {
+    font-size: 16px;
+  }
+  
+  ul {
+    height: 100%;
+    padding: 0px 5px 0px 20px;
+  }
+  
+  a {
+    color: #17a2b8;
+  }
+
+  .center {
+    display: flex;
+    justify-content: center;
+  }
+  
+  
+  .btn {
+    outline: none;
+    color: black;
+    background-color: blue;
+    box-shadow: 0 0 0 0;
+    margin-left: 20px;
+    right: 20px;
+  }
+  #create_event{
+    background-color: blue;
+    color: yellow;
+  }
+  #edit_event{
+    background-color: blue;
+    color: yellow;
+  }
+  
+  #create_event_form {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top : 0%;
+    left: 0%;
+    padding-left: 15%;
+    padding-top: 10%;
+  }
+  
+  .popup_content {
+    position: relative;
+    background-color: rgb(22, 110, 44, 0.9);
+    margin: 0 auto;
+    padding: 20px;
+    width: 500px;
+  }
+
+  .label_sukien {
+    font-weight: 500;
+    color: black;
+  }
+  #edit_event_popup{
+    display: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    width: 100%;
+    height: 120%;
+    top : 0%;
+    left: 0%;
+    padding-left: 20%;
+    padding-top: 3%;
+  }
+  .content_div{
+    background-color: white;
+    width: 60%;
+    height: 80%;
+  }
+  #edit_event_header{
+    width: 100%;
+  }
+
+  .edit_event_content{
+    position: relative;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+
+    border-collapse: collapse;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  }
+
+.edit_event_content thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: center;
+}
+.edit_event_content th,
+.edit_event_content td {
+  padding: 12px 15px;
+}
+
+.edit_event_content tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.edit_event_content tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.edit_event_content tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+.edit_event_content tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+
+
+
+  /* End event css */
+/* Vipmember CSS */
+
+  /* End Vipmember CSS */
+
+
+/*403 fobiden css*/
+.permission_denied{
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  color: black;
+}
+/* Footer */
+.information .small-icon:hover,
+.information .small-icon:active{
+  transform: scale(1.3);
+  color: yellow;
+}
+/* .social-icons{
+  color: #66D3FA;
+  list-style: none;
+  margin-top: 30px;
+}
+.social-icons li{
+  display: inline-block;
+  color: white;
+  margin-left: 30px;
+  font-size: 200%;
+  margin-bottom: 30px;   
+}
+.social-icons li i{
+  cursor: pointer;
+  transition: all .3s;
+}
+.social-icons li i:hover,
+.social-icons li i:active{
+  color: #ffa500;
+  transform: scale(1.3);
+} */

@@ -1,0 +1,100 @@
+{% extends "management/layout.html" %}
+{% load bootstrap5 %}
+{% block title %}
+{% endblock %}
+{% block content %}
+
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<section class = "vip_member">
+    <div class="container my-4">
+        <div class="row">
+            <div class="col-sm-4 bg-info">
+                <h3>Thêm thành viên mới</h3>
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <!-- {{ AddF.as_p }}   -->
+                    <!-- <label>Ma the</label>
+                    <input type="text" name="ma_the" class="form-control">
+                    <label>Ma KH</label>
+                    <input type="text" name="ma_khach_hang" class="form-control"> -->
+                    <label>Ten KH</label>
+                    <input type="text" name="ten_khach_hang" class="form-control">
+                    <label>SĐT</label>
+                    <input type="text" name="so_dien_thoai" class="form-control"> <br>
+                    <!-- {% for message in messages %}
+                        <script>
+                            window.onload() = function(){
+                                alert('{{message}}')
+                            }
+                        </script>
+                    {% endfor %} -->
+                    <div style="text-align: center;">
+                        <button type="submit" value="{{KH_Hang}}" name="AddKH" class="btn btn-light">Submit</button>
+                    </div>
+                </form>
+                <div style="text-align: center;" class="mt-5">
+                    <img src="https://lh3.googleusercontent.com/pw/AM-JKLWDxaYBlmzAmzNwGEhlHO7T8uRTRV14JVkStno1CaCc7HwbtobywPQdZKO4Jn320-AjxElMyOx1SrU0N2WHyl6eu8MgKTHv1MB_QFtNNj7OZBWfLWzZM8rcMG7hM_P1wQL_gxBSggsSAiZ3VfdOVvIM=s360-no?authuser=0" alt="2H8l7.png" style="width: 250px; height: 250px;">
+                </div>
+            </div>
+            <div class="col-sm-8 bg-warning"> 
+                <h3 class=" ">Danh sách Vip Member</h3>
+                <form action="" method="GET">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            {{ myFilter.form.ma_the.label_tag }} <br>
+                            {{ myFilter.form.ma_the }}  <br>
+                            {{ myFilter.form.hang.label_tag }} <br>
+                            {{ myFilter.form.hang }}    <br>
+                            {{ myFilter.form.ma_khach_hang__ten_khach_hang.label_tag }} <br>
+                            {{ myFilter.form.ma_khach_hang__ten_khach_hang }} <br> <br>
+                            <button class="btn btn-primary mx-auto" type="submit">Search</button>
+                        </div> 
+                        <div class="col-sm-8" style="text-align: center;">
+                            <img src="https://marsurl.com/images/2U5db.png" alt="" style="width: 300px; height: 180px;">
+                        </div>
+                    </div>             
+                </form>
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <div class="table-responsive mt-2" style="height: 400px;overflow-y: scroll;">
+                        <table class="table table-bordered table-hover table-striped bg-light">
+                            <thead>
+                                <tr>
+                                    <th>SĐT</th>
+                                    <th>Tên khách hàng</th>
+                                    <th>Điểm tích luỹ</th>
+                                    <th>Hạng</th>
+                                    <th>Xoá</th>                      
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for thethanhvien in thethanhviens %}
+                                <tr>
+                                    {% comment %} <th scope="row"></th> {% endcomment %}
+                                    <td>{{thethanhvien.ma_the}}</td>
+                                    <td>{{thethanhvien.ma_khach_hang.ten_khach_hang}}</td>
+                                    <td>{{thethanhvien.tien_tich_luy}}</td>
+                                    <td>{{thethanhvien.hang}}</td>
+                                    <td><button type='submit' class="btn btn-light btn-outline-dark" value="{{thethanhvien.ma_the}}" 
+                                        name="DelKH" onclick="return confirm('Bạn có chắc chắn muốn xoá không?')">Xoá</button></td>
+                                    {% comment %} <th></th> {% endcomment %}
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+                
+            </div>
+            <!-- <div class="col-sm-2 bg-info"></div> -->
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+<!-- 
+    alert cho thông báo thêm khách hàng
+    yes/no cho xoá tv
+    hiện lại tv
+ -->
